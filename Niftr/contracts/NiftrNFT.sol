@@ -30,9 +30,9 @@ contract NiftrNFT is ERC721, Ownable {
     function setBaseTokenUri(string calldata baseTokenUri_) external onlyOwner {
         baseTokenUri = baseTokenUri_;
     }
-    function tokenURI(uint256 tokenId) public view override returns (string memory) {
+    function tokenURI(uint256 tokenId_) public view override returns (string memory) {
         require(_exists(tokenId_), 'Token does not exist');
-        return string(abi.encodePacked(baseTokenUri, Strings.toString(tokenId), '.json'));
+        return string(abi.encodePacked(baseTokenUri, Strings.toString(tokenId_), '.json'));
     }
     function withdraw() external onlyOwner {
         (bool success, ) = withdrawWallet.call{value: address(this).balance}('');
