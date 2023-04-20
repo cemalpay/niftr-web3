@@ -57,7 +57,7 @@ contract Niftr {
 
     }
 
-    function getCampaigns() public view return (Campaign[] memory){
+    function getCampaigns() public view returns (Campaign[] memory){
         Campaign[] memory allCampaigns = new Campaign[](numberOfCampaigns);
 
         for(uint256 i = 0; i < numberOfCampaigns; i++){
