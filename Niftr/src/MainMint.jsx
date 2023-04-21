@@ -17,6 +17,12 @@ const MainMint = ({ accounts, setAccounts }) => {
         NiftrNFT.abi,
         signer
       );
+      try {
+        const response = await contract.mint(mintAmount);
+        console.log(response);
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
 };
