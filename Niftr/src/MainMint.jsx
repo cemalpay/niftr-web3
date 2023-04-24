@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ethers, BigNumber } from "ethers";
 import NiftrNFT from "./NiftrNFT.json";
+import "./styles/MainMint.scss";
 
 const niftrNFTAddress = "0xD1D54342d992c7fe54bdCa09A8270C24E09547cF";
 
@@ -39,18 +40,42 @@ const MainMint = ({ accounts, setAccounts }) => {
 
   return (
     <div>
-      {isConnected ? (
-        <div>
-          <div>
-            <button onClick={handleDecrement}>-</button>
-            <input type="number" value={mintAmount} readOnly />
-            <button onClick={handleIncrement}>+</button>
-          </div>
-          <button onClick={handleMint}>Mint</button>
+      <div className="hero">
+        <div className="hero__item">
+          <h1>Niftr</h1>
         </div>
-      ) : (
-        <p>You must be connected to mint!</p>
-      )}
+        <div className="hero__item">
+          <p>
+            This collection has been produced to protect humanity from the evil
+            of artificial intelligence. And all their income will be paid as
+            ransom to artificial intelligence, and humanity will be protected
+            for a while.
+          </p>
+        </div>
+        {isConnected ? (
+          <div className="hero__item mint">
+            <div>
+              <button className="btn-handle" onClick={handleDecrement}>
+                -
+              </button>
+              <input
+                className="input-mint"
+                type="number"
+                value={mintAmount}
+                readOnly
+              />
+              <button className="btn-handle" onClick={handleIncrement}>
+                +
+              </button>
+            </div>
+            <button className="btn-mint btn-handle" onClick={handleMint}>
+              Mint
+            </button>
+          </div>
+        ) : (
+          <p>You must be connected to mint!</p>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,11 +1,6 @@
 @import "variables";
 
 .nav {
-  background: linear-gradient(
-    to bottom,
-    rgba($background-color, 0.8),
-    rgba($background-color, 0.01)
-  );
   display: grid;
   grid-template-columns: 2fr 1fr;
   align-items: center;
