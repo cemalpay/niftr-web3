@@ -18,11 +18,36 @@ const MainMint = ({ accounts, setAccounts }) => {
         signer
       );
       try {
-        const response = await contract.mint(mintAmount);
+        const response = await contract.mint(BigNumber.from(mintAmount));
         console.log(response);
       } catch (err) {
         console.log(err);
       }
     }
   }
+  const handleDecrement = () => {
+    if (mintAmount > 1) {
+      setMintAmount(mintAmount - 1);
+    }
+
+  const handleIncrement = () => {
+    if (mintAmount < 3) {
+      setMintAmount(mintAmount + 1);
+    }
+  }
+
+  return (
+    <div>
+      <h1>Niftr</h1>
+      <p>This collection has been produced to protect humanity from the evil of artificial intelligence. And all their income will be paid as ransom to artificial intelligence, and humanity will be protected for a while.</p>
+      {isConnected ? (
+        <div>
+          <div>
+            <button onClick={handleDecrement}>-</button>
+            <input type="number" value={mintAmount} readOnly />
+            <button onClick={handleIncrement}>+</button>
+          </div>
+        </div>
+      )}
+    </div>
 };
