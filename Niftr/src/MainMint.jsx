@@ -30,24 +30,36 @@ const MainMint = ({ accounts, setAccounts }) => {
       setMintAmount(mintAmount - 1);
     }
 
-  const handleIncrement = () => {
-    if (mintAmount < 3) {
-      setMintAmount(mintAmount + 1);
-    }
-  }
+    const handleIncrement = () => {
+      if (mintAmount < 3) {
+        setMintAmount(mintAmount + 1);
+      }
+    };
 
-  return (
-    <div>
-      <h1>Niftr</h1>
-      <p>This collection has been produced to protect humanity from the evil of artificial intelligence. And all their income will be paid as ransom to artificial intelligence, and humanity will be protected for a while.</p>
-      {isConnected ? (
-        <div>
+    return (
+      <div>
+        <h1>Niftr</h1>
+        <p>
+          This collection has been produced to protect humanity from the evil of
+          artificial intelligence. And all their income will be paid as ransom
+          to artificial intelligence, and humanity will be protected for a
+          while.
+        </p>
+        {isConnected ? (
           <div>
-            <button onClick={handleDecrement}>-</button>
-            <input type="number" value={mintAmount} readOnly />
-            <button onClick={handleIncrement}>+</button>
+            <div>
+              <button onClick={handleDecrement}>-</button>
+              <input type="number" value={mintAmount} readOnly />
+              <button onClick={handleIncrement}>+</button>
+            </div>
+            <button onClick={handleMint}>Mint</button>
           </div>
-        </div>
-      )}
-    </div>
+        ) : (
+          <p>You must be connected to mint!</p>
+        )}
+      </div>
+    );
+  };
 };
+
+export default MainMint;
