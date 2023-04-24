@@ -21,10 +21,11 @@ ul {
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: $margin;
   li {
     margin: 0 $margin-m;
-    padding: 0 $margin;
+    padding: $margin $margin;
+    cursor: pointer;
   }
 }
 

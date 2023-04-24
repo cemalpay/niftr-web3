@@ -7,6 +7,15 @@
   justify-items: center;
   padding: $margin;
   height: 120px;
+  ul {
+    li {
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        border-bottom: 1px solid $primary-color;
+      }
+    }
+  }
 }
 
 .btn-connect {
