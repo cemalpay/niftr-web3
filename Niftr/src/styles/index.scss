@@ -6,6 +6,7 @@
 
 body {
   background-color: $background-color;
+  background-image: url("../img/bg.png");
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: $font-size;
   line-height: 1.4;
@@ -20,6 +21,7 @@ ul {
   padding: 0;
   li {
     margin: 0 $margin-m;
+    padding: 0 $margin;
   }
 }
 
