@@ -6,6 +6,8 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+import "@openzeppelin/contracts/utils/Strings.sol";
+
 contract NiftrNFT is ERC721, Ownable {
     uint256 public mintPrice;
     uint256 public totalSupply;
@@ -31,9 +33,13 @@ contract NiftrNFT is ERC721, Ownable {
         baseTokenUri = baseTokenUri_;
     }
     function tokenURI(uint256 tokenId_) public view override returns (string memory) {
-        require(_exists(tokenId_), 'Token does not exist');
-        return string(abi.encodePacked(baseTokenUri, Strings.toString(tokenId_), '.json'));
+    require(_exists(tokenId_), 'Token does not exist');
+    return string(abi.encodePacked(baseTokenUri, Strings.toString(tokenId_), '.json'));
+    }   
+    function baseURI() public view returns (string memory) {
+        return baseTokenUri;
     }
+    
     function withdraw() external onlyOwner {
         (bool success, ) = withdrawWallet.call{value: address(this).balance}('');
         require(success, 'Withdraw failed');

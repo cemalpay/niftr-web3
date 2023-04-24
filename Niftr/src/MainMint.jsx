@@ -19,7 +19,9 @@ const MainMint = ({ accounts, setAccounts }) => {
         signer
       );
       try {
-        const response = await contract.mint(BigNumber.from(mintAmount));
+        const response = await contract.mint(BigNumber.from(mintAmount), {
+          value: ethers.utils.parseEther((mintAmount * 0.02).toString()),
+        });
         console.log(response);
       } catch (err) {
         console.log(err);
@@ -54,7 +56,7 @@ const MainMint = ({ accounts, setAccounts }) => {
         </div>
         {isConnected ? (
           <div className="hero__item mint">
-            <div>
+            <div className="section__mint">
               <button className="btn-handle" onClick={handleDecrement}>
                 -
               </button>
