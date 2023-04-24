@@ -1,5 +1,3 @@
-import React from "react";
-
 const NavBar = ({ accounts, setAccounts }) => {
   const isConnected = Boolean(accounts[0]);
 
@@ -12,22 +10,22 @@ const NavBar = ({ accounts, setAccounts }) => {
     }
   }
   return (
-    <div>
+    <div className="nav">
       {/*LEFT SIDE OF NAVBAR*/}
-      <div>Twitter</div>
-      <div>Discord</div>
-
+      <div className="nav__left">
+        <div>About</div>
+        <div>How to Mint</div>
+        <div>Team</div>
+      </div>
       {/*RIGHT SIDE OF NAVBAR*/}
-      <div>About</div>
-      <div>How to Mint</div>
-      <div>Team</div>
-
-      {/*CONNECT WALLET BUTTON*/}
-      {isConnected ? (
-        <p>Connected</p>
-      ) : (
-        <button onClick={connectAccount}>Connect</button>
-      )}
+      <div className="nav__right">
+        {/*CONNECT WALLET BUTTON*/}
+        {isConnected ? (
+          <p>Connected</p>
+        ) : (
+          <button onClick={connectAccount}>Connect</button>
+        )}
+      </div>
     </div>
   );
 };
