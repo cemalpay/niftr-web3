@@ -1,6 +1,6 @@
 import "./styles/NavBar.scss";
 
-const NavBar = ({ accounts, setAccounts }) => {
+const NavBar = (accounts, setAccounts) => {
   const isConnected = Boolean(accounts[0]);
 
   async function connectAccount() {
