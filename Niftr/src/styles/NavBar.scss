@@ -1,3 +1,27 @@
+@import "variables";
+
 .nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: $margin;
+  height: 120px;
+}
+
+.btn-connect {
+  font-size: $font-size;
+  background-color: $background-color;
+  color: $primary-color;
+  padding: 0.5rem 1rem;
+  border: 1px solid $primary-color;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: $primary-color;
+    color: $background-color;
+  }
+}
+
+.text-connected {
+  font-size: $font-size;
 }

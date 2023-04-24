@@ -1,6 +1,6 @@
 import "./styles/NavBar.scss";
 
-const NavBar = (accounts, setAccounts) => {
+const NavBar = ({ accounts, setAccounts }) => {
   const isConnected = Boolean(accounts[0]);
 
   async function connectAccount() {
@@ -13,7 +13,6 @@ const NavBar = (accounts, setAccounts) => {
   }
   return (
     <div className="nav">
-      {/*LEFT SIDE OF NAVBAR*/}
       <div className="nav__left">
         <ul>
           <li>
@@ -27,13 +26,14 @@ const NavBar = (accounts, setAccounts) => {
           </li>
         </ul>
       </div>
-      {/*RIGHT SIDE OF NAVBAR*/}
       <div className="nav__right">
         {/*CONNECT WALLET BUTTON*/}
         {isConnected ? (
-          <p>Connected</p>
+          <p className="connected-text">Connected</p>
         ) : (
-          <button onClick={connectAccount}>Connect</button>
+          <button className="btn-connect" onClick={connectAccount}>
+            Connect
+          </button>
         )}
       </div>
     </div>

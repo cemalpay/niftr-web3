@@ -1,12 +1,29 @@
+@import "variables";
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: #f0f0f0;
+  background-color: $background-color;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: $font-size;
   line-height: 1.4;
-  color: #333;
+  color: $primary-color;
   margin: 0;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0 $margin-m;
+  }
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
 }
