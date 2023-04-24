@@ -1,4 +1,4 @@
-import "./NavBar.css";
+import "./styles/NavBar.css";
 
 const NavBar = ({ accounts, setAccounts }) => {
   const isConnected = Boolean(accounts[0]);
