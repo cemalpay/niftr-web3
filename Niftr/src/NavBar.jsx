@@ -1,4 +1,4 @@
-import "./styles/NavBar.css";
+import "./styles/NavBar.scss";
 
 const NavBar = ({ accounts, setAccounts }) => {
   const isConnected = Boolean(accounts[0]);
@@ -15,9 +15,17 @@ const NavBar = ({ accounts, setAccounts }) => {
     <div className="nav">
       {/*LEFT SIDE OF NAVBAR*/}
       <div className="nav__left">
-        <div>About</div>
-        <div>How to Mint</div>
-        <div>Team</div>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Team</a>
+          </li>
+        </ul>
       </div>
       {/*RIGHT SIDE OF NAVBAR*/}
       <div className="nav__right">
